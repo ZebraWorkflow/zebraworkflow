@@ -1,0 +1,255 @@
+body {
+    font-family: Helvetica, sans-serif;
+    background-color: #f0f0f0;
+    background-image: url('Case Closure Background.png');
+    background-size: auto;
+    background-repeat: no-repeat;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.bold-font {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 800px; /* Ensure container does not stretch too much */
+    padding: 10px 25px;
+    padding-right: 40px; /* Add padding to the right */
+    box-sizing: border-box;
+}
+
+#title {
+    font-family: Tahoma, sans-serif;
+    color: #000;
+    padding: 10px 25px;
+    border-bottom: 3px solid #ccc;
+    opacity: 0.85;
+    text-align: left;
+    font-size: 40px;
+    font-weight: bold;
+    flex: 1;
+    max-width: 55%; /* Adjust max-width to ensure proper spacing */
+}
+
+#workflow {
+    opacity: 1;
+    padding: 10px;
+    margin-left: 20px;
+    flex: 1;
+    max-width: 35%; /* Adjust max-width to ensure proper spacing */
+}
+
+#top-back-button {
+    position: absolute;
+    font-family: Arial;
+    font-size: 15px;
+    top: 160px; /* Change as needed to position it vertically */
+    right: 70px; /* Position it 10px from the right */
+    padding: 10px 15px;
+    background-color: #134B70;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 1000;
+    width: auto;
+    max-width: 120px;
+    height: auto;
+    max-height: 100px;
+}
+
+
+.step {
+    display: none;
+    background: #fff;
+    font-weight: 300;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.step.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1.2);
+    font-size: large;
+}
+
+button {
+    background-color: #134B70;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #265073;
+}
+
+.info-icon {
+    cursor: pointer;
+    font-size: 25px;
+    color: #a10707;
+    margin-bottom: 10px;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    font-size: 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(51, 50, 50, 0.1);
+    border-radius: 8px;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.popup.show {
+    display: block;
+    opacity: 1;
+}
+
+.popup .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#banner {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    width: 150px;
+    height: auto;
+    z-index: 100;
+}
+
+.ReadMe {
+    display: inline-block;
+    width: 100%;
+    color: #fff; /* White text color */
+    background-color: #3877be; /* Light blue background */
+    border: 2px solid #2d748a; /* Slightly darker blue border */
+    font-family: Gadugi;
+    font-weight: bold;
+    padding: 10px 25px;
+    z-index: 0;
+    opacity: 0.95;
+    text-align: left;
+    font-size: 15px;
+    border-radius: 8px; /* Optional: adding rounded corners for a softer look */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Text shadow for better readability */
+}
+
+.pfont {
+    font-family: Gadugi;
+}
+
+@media (max-width: 1068px) {
+    #title {
+        font-size: 30px;
+    }
+    .ReadMe {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 1368px) {
+    #title {
+        font-size: 30px;
+    }
+    .ReadMe {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1000px) {
+    #title {
+        font-size: 30px;
+    }
+    .ReadMe {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 968px) {
+    #title {
+        font-size: 30px;
+    }
+    .ReadMe {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 868px) {
+    #title {
+        font-size: 30px;
+    }
+    .ReadMe {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    #title {
+        font-size: 30px;
+    }
+    .ReadMe {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 668px) {
+    #title {
+        font-size: 30px;
+    }
+    .ReadMe {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 568px) {
+    #title {
+        font-size: 30px;
+    }
+    .ReadMe {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    #title {
+        font-size: 24px;
+        text-align: center;
+    }
+    .ReadMe {
+        display: none;
+    }
+}

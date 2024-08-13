@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Closure Workflow</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" type="image/png" href="zebralogo.png">
+    <!-- Font Awesome CSS -->
+  </head>
+    <img id="banner" src='ZebraBannerLogo.png' alt='Zebra Banner Logo'>
+  <body>
+     <div id="container">
+      <div id="content-wrapper"></div>
+        <div id="title">Case Closure Workflow</div>
+        <div class='ReadMe'>
+            <p class="pfont">(Please Read ME)</p>  
+            <p class="pfont">- This is a workflow guide that helps you with your case closure decision.</p>
+            <p class="pfont">- This guide only shows how you should proceed with the next steps with the customer. If you have followed all the steps in the list, you will only have one way to close the ticket.</p>
+            <p class="pfont">- Please make sure that you complete the steps before proceeding with the next step.</p>
+            <p class="pfont">- This guide does not apply to cases where pending for customer to come back from holiday/next visit.</p>
+        </div>       
+    </div>
+    <div id="workflow">
+      <button id="top-back-button">Main Page</button>
+      <div class="step active" id="MainPage">
+        <p class=bold-font>Choose one of the following.</p>
+        <p>What is the Entitlement status of your case?</p>
+        <button onclick="goToStep('step1')">Entitled cases</button>
+        <button onclick="goToStep('stepNonEntitled1')">Non-Entitled cases</button>
+      </div>
+      <!-- Non-Entitled Case -->
+      <div class="step" id="stepNonEntitled1">
+        <p class=bold-font>Choose one of the following.</p>
+        <p>Which situation is the closest to your case?</p>
+        <button onclick="goToStep('step2a')">Hardware Failure</button>
+        <button onclick="goToStep('stepNonEntitled2b')">3rd Party Media Issue</button>
+        <button onclick="goToStep('step2c')">The printer is out of support scope.(China SKU)(Walmart Printer)(Unsupported Product)</button>
+        <button onclick="goToStep('step2d')">Zebra Supported Issue.</button>
+        <button onclick="goToStep('stepNonEntitled2d')">Software Related Issue</button>
+        <button onclick="goToStep('step2e')">Purchasing Inquiries</button>
+      </div>
+      <!-- Continue Work Here -->
+      <div class="step" id="stepNonEntitled2b">
+        <p>Does the 3rd party media fall within the specification?</p>
+        <button onclick="goToStep('step3b')">Yes</button>
+        <button onclick="goToStep('stepNonEntitled4b')">No</button>
+      </div>
+      <div class="step" id="stepNonEntitled4b">
+        <p>Did you advise the customer to purchase certain compatible supplies to resolve their issue?</p>
+        <button onclick="goToStep('stepInfoProvided')">No, Customer's Environment Related</button>
+        <button onclick="goToStep('stepNonEntitled7b')">Yes</button>
+        <button onclick="goToStep('stepNonEntitled3b')">No</button>
+      </div>
+      <div class="step" id="stepNonEntitled7b">
+        <p>Did you refer the customer to purchase a supply from MCC?</p>
+        <button onclick="goToStep('step8b')">Customer only needs the part number. Already have a vendor to refer to.</button>
+        <button onclick="goToStep('step6e')">Yes</button>
+        <button onclick="goToStep('step3b')">No</button>
+      </div>
+      <div class="step" id="stepNonEntitled3b">
+        <p>Case is deemed to be not completed; please DO NOT close!</p>
+        <button onclick="goToStep('stepreferl2')">Next</button>
+      </div>
+      <div class="step" id="step2e">
+        <p>What item is the customer looking for?</p>
+        <button onclick="goToStep('step3e')">Customer would like to get recommendation for Printer</button>
+        <button onclick="goToStep('step4e')">Customer would like to get recommendation for Media Supplies.</button>
+        <button onclick="goToStep('step6e')">Customer already know what to buy(Have a PartNumber) but do not know who to reach out to.</button>
+      </div>
+      <div class="step" id="step3e">
+        <p>- Please do try to provide a recommendation to the customer based on customer requirement</p>
+        <p>- If the issue is too complicated, please refer to pod lead or L2 near you.</p>
+        <button onclick="goToStep('step6e')">Unable to find what customer is looking for.</button>
+        <button onclick="goToStep('step7e')">Able to provide some recommendation to the customer.</button>
+      </div>
+      <div class="step" id="step4e">
+        <p>- Use the Supplier Selector Tool or the ZIPSHIP PDF files to find a Zebra label to recommend to the customer.</p>
+        <p>- If the issue is too complicated, please refer to pod lead or L2 near you.</p>
+        <button onclick="goToStep('step6e')">Unable to find what customer is looking for.</button>
+        <button onclick="goToStep('step7e')">Able to provide some recommendation to the customer.</button>
+      </div>
+      <div class="step" id="step6e">
+        <p>- Recommend customer to reach out to the MCC team</p>
+        <p>- Explain to the customer that we are from the Technical Support team and our information is limited compared to partner or MCC.</p>
+        <P>- Explain to the customer that Partner will have more options and information, so they are the best person to get the best recommendation.</P>
+        <p>Checklist:</p>
+        <p>1. Provide contact for the MCC team.</p>
+        <p>2. Provide Partner Locator Link.</p>
+        <p>3. Submit MCC Tracker.</p>
+        <p class=bold-font>NOTE: MCC is always the last resort.</p>
+        <button onclick="goToStep('step8e')">Checklist done</button>
+      </div>
+      <div class="step" id="step7e">
+        <p>Checklist:</p>
+        <p>1. Make sure that the customer is satisfied with the information provided.</p>
+        <p>2. Make sure customers have someone to reach out to get the printer needed.</p>
+        <button onclick="goToStep('stepSP')">Customer already have a reseller to reach out to.</button>
+        <button onclick="goToStep('step6e')">Customer do not know where to purchase the printer.</button>
+      </div>
+      <div class="step" id="step8e">
+        <p>- Leave the case open for one more day.</p>
+        <p>- Check with the customer the next day to make sure the customer received the information you provided.</p>
+        <button onclick="goToStep('stepMisrouted')">Next</button>
+      </div>
+      <!-- HERE -->
+      <div class="step" id="stepNonEntitled2c">
+        <p>Does the 3rd party media fall within the specification?</p>
+        <button onclick="goToStep('step3b')">Yes</button>
+        <button onclick="goToStep('stepNonEntitled4b')">No</button>
+      </div>
+      <div class="step" id="stepNonEntitled2d">
+        <p>Are you able to fully resolve the customer's issue?</p>
+        <button onclick="goToStep('stepSP')">Yes</button>
+        <button onclick="goToStep('stepNonEntitled3d')">No</button>
+      </div>
+      <div class="step" id="stepNonEntitled3d">
+        <p>Why is the issue not resolved?</p>
+        <button onclick="goToStep('step6b')">3rd party related</button>
+        <button onclick="goToStep('step4d')">Zebra related software issue</button>
+        <button onclick="goToStep('step2a')">Hardware issue (sensor, printhead, platen roller, media guide, ETC...)</button>
+        <button onclick="goToStep('stepNonEntitled9b')">Customer environment issue</button>
+        <button onclick="goToStep('step6d')">Customer is looking for a feature that is not something that we offer.</button>
+      </div>
+      <div class="step" id="stepNonEntitled9b">
+        <p>Is it related to the customer environment?</p>
+        <button onclick="goToStep('stepreferl2')">Yes</button>
+        <button onclick="goToStep('stepNonEntitled10b')">No</button>
+      </div>
+      <div class="step" id="stepNonEntitled4b">
+        <p>Did you advise the customer to purchase certain compatible supplies to resolve their issue?</p>
+        <button onclick="goToStep('stepInfoProvided')">No, Customer's Environment Related</button>
+        <button onclick="goToStep('stepNonEntitled7b')">Yes</button>
+        <button onclick="goToStep('step3b')">No</button>
+      </div>
+      <div class="step" id="stepNonEntitled10b">
+        <p>Case is deemed to be not completed; please DO NOT close!</p>
+        <button onclick="goToStep('stepreferl2')">Next</button>
+      </div>
+      <!-- Case Closure Info Provided -->
+      <div class="step" id="stepInfoProvided">
+        <p class=bold-font>Checklist:</p>
+        <p>1. Ensure you prove to the customer that the printer is working as per design.</p>
+        <p>2. Make sure the customer understands what is causing the issue.</p>
+        <p>3. Make sure the customer gives permission to close the ticket.</p>
+        <p>4. Make sure that the customer knows who to refer to next.</p>
+        <p>5. Make sure all the fields in your case are updated.</p>
+        <p class=bold-font>Case Closure: Info Provided</p>
+        <button onclick="goToStep('MainPage')">Back to Main Page</button>
+      </div>
+      <!---Entitled Case--->
+      <div class="step" id="step1">
+        <p class=bold-font>Choose one of the following.</p>
+        <p>Which situation is the closest to your case?</p>
+        <button onclick="goToStep('step2a')">Hardware Failure</button>
+        <button onclick="goToStep('step2b')">3rd Party Media Issue</button>
+        <button onclick="goToStep('step2c')">The printer is out of support scope.(China SKU)(Walmart Printer)(Unsupported Product)</button>
+        <button onclick="goToStep('step2d')">Zebra Related Issue.(Calibration)(configuration)(Installation)</button>
+        <button onclick="goToStep('step2d')">Software Related Issue</button>
+        <button onclick="goToStep('step2e')">Purchasing Inquiries</button>
+      </div>
+      <!-- For both entitled and non-entitled -->
+      <div class="step" id="step2a">
+        <p class=bold-font>Hardware Failure</p>
+        <p>- Make sure that there is a hardware issue from the printer side.</p>
+        <p>- Do check with an L2 or PodLead to ensure there is nothing else we can do about this.</p>
+        <button onclick="goToStep('stepRMA')">Recommend the customer to send the printer for repair and close it as RMA</button>
+      </div>
+      <!-- Case Closure RMA -->
+      <div class="step" id="stepRMA">
+        <p class=bold-font> Recommend the customer to send the printer for repair.</p>
+        <p>Checklist:</p>
+        <p>1. Make sure that you have sent the RMA form to the customer.</p>
+        <p>2. If the customer requests Onsite Support, close as Assisted Support (Onsite).</p>
+        <p>3. If the printer is within 30 days of the purchasing date, close as Assisted Support (Close as DOA).</p>
+        <p>- Make sure all the fields in your case are updated before closing!</p>
+        <p class=bold-font>Case Closure: Assisted Support (RMA)(DOA)(Onsite)</p>
+        <button onclick="goToStep('MainPage')">Back to Main Page</button>
+      </div>
+      <div class="step" id="step2b">
+        <p>Does the 3rd party media fall within the specification?</p>
+        <button onclick="goToStep('step3b')">Yes</button>
+        <button onclick="goToStep('step4b')">No</button>
+      </div>
+      <div class="step" id="step3b">
+        <p>Case is deemed to be not completed; please DO NOT close!</p>
+        <button onclick="goToStep('stepreferl2')">Next</button>
+      </div>
+      <div class="step" id="step4b">
+        <p>Did you advise the customer to purchase certain compatible supplies to resolve their issue?</p>
+        <button onclick="goToStep('step6b')">No, Customer's Environment Related</button>
+        <button onclick="goToStep('step7b')">Yes</button>
+        <button onclick="goToStep('step3b')">No</button>
+      </div>
+      <!-- Steps refer L2 -->
+      <div class="step" id="stepreferl2">
+        <p>- Refer to the L2 for further advice and assistance.</p>
+        <p class=bold-font>Checklist (provide if applicable):</p>
+        <p>1.Label information.</p>
+        <p>2.Software that the customer is using.</p>
+        <p>3.Details of what issue the customer is facing.</p>
+        <p>- Make sure all the fields in your case are updated.</p>
+        <button onclick="goToStep('MainPage')">Back to Main Page.</button>
+      </div>
+      <div class="step" id="step6b">
+        <p>Make sure you prove to the customer that the printer works as per design.</p>
+        <button onclick="goToStep('stepEvaluated')">Next</button>
+      </div>
+      <!-- Case Closure for Evaluated (No Fault Found) -->
+      <div class="step" id="stepEvaluated">
+        <p class=bold-font>Checklist:</p>
+        <p>1. Ensure you prove to the customer that the printer is working as per design.</p>
+        <p>2. Make sure the customer understands what is causing the issue.</p>
+        <p>3. Make sure the customer gives permission to close the ticket.</p>
+        <p>4. Make sure that the customer knows who to refer to next.</p>
+        <p>5. Make sure all the fields in your case are updated.</p>
+        <p class=bold-font>Case Closure: Evaluated (No fault Found)(Customization needed)</p>
+        <button onclick="goToStep('MainPage')">Back to Main Page</button>        
+      </div>
+      <div class="step" id="step7b">
+        <p>Did you refer the customer to purchase a supply from MCC?</p>
+        <button onclick="goToStep('step8b')">Customer only needs the part number. Already have a vendor to refer to.</button>
+        <button onclick="goToStep('step9b')">Yes</button>
+        <button onclick="goToStep('step3b')">No</button>        
+      </div>
+      <div class="step" id="step8b">
+        <p>1. Make sure that the customer receives the information.</p>
+        <p>2. Check with the customer if there is any other assistance is needed.</p>
+        <button onclick="goToStep('stepSP')">Next</button>
+      </div>
+      <!-- Case Closure for Solution Provided -->
+      <div class="step" id="stepSP">
+        <p class=bold-font>Checklist: </P>
+        <p>1. Check with the customer if there is any other assistance is needed.</p>
+        <p>2. Promote survey to the customer. (You can use the email template for the solution provided)</p>
+        <p class=bold-font>Case Closure: Solution Provided (Good Job.)</p>
+        <button onclick="goToStep('MainPage')">Back to Main Page</button>
+      </div>
+      <div class="step" id="step9b">
+        <p>If possible, keep the case open until the customer gets the supplies that he needs</p>
+        <button onclick="goToStep('step10b')">Customer informed that it would take a very long time to get the supply he needs</button>
+        <button onclick="goToStep('step11b')">Customer request to close the ticket for now</button>
+        <button onclick="goToStep('MainPage')">I will keep the case open for now.</button>
+      </div>
+      <div class="step" id="step10b">
+        <p>Make sure to get a verbal confirmation from the customer to soft-close the ticket before closing the ticket as Evaluated</p>
+        <button onclick="goToStep('stepEvaluated')">Next</button>
+      </div>
+      <div class="step" id="step11b">
+        <p>Make sure that customers understand the survey if it gets triggered.</p>
+        <button onclick="goToStep('stepEvaluated')">Next</button>
+      </div>
+      <div class="step" id="step2c">
+        <p>Inform customer that the printer is out of scope for support</p>
+        <button onclick="goToStep('stepEvaluated2')">Next</button>
+      </div>
+      <!-- Case Closure for Evaluated (Wrong Configuration)-->
+      <div class="step" id="stepEvaluated2">
+        <p>Checklist:</p>
+        <p>1. Ensure you prove to the customer that the printer is working as per design.</p>
+        <p>2. Make sure the customer understands what is causing the issue.</p>
+        <p>3. Make sure the customer gives permission to close the ticket.</p>
+        <p>4. Make sure that the customer knows who to refer to next.</p>
+        <p>5. Make sure all the fields in your case are updated.</p>
+        <p class=bold-font>Case Closure: Evaluated (wrong configuration)</p>
+        <button onclick="goToStep('MainPage')">Back to Main Page</button>
+      </div>
+      <div class="step" id="step2d">
+        <p>Are you able to fully resolve the customer's issue?</p>
+        <button onclick="goToStep('stepSP')">Yes</button>
+        <button onclick="goToStep('step3d')">No</button>
+      </div>
+      <div class="step" id="step3d">
+        <p>Why is the issue not resolved?</p>
+        <button onclick="goToStep('step6b')">3rd party related</button>
+        <button onclick="goToStep('step4d')">Zebra related software issue</button>
+        <button onclick="goToStep('step2a')">Hardware issue (sensor, printhead, platen roller, media guide, ETC...)</button>
+        <button onclick="goToStep('step9b')">Customer environment issue</button>
+        <button onclick="goToStep('step6d')">Customer is looking for a feature that is not something that we offer.</button>
+      </div>
+      <div class="step" id="step4d">
+        <p>Is it related to Zebra Software that is outside your support scope?</p>
+        <button onclick="goToStep('step7d')">Yes</button>
+        <button onclick="goToStep('step3b')">No</button>
+      </div>
+      <div class="step" id="step7d">
+        <p>Please assist the customer accordingly</p>
+        <p>If the issue is too complicated, please refer to pod lead or L2 near you.</p>
+        <button onclick="goToStep('MainPage')">Back to Main Page</button>
+      </div>
+      <div class="step" id="step6d">
+        <p>- Make sure that there is nothing in our product line that can achieve what customer needs.</p>
+        <p>- Suggest customer that we can create a CAG request; have to refer to the reseller for a CAG request.</p>
+        <p>- Do refer to Pod Lead or L2 for more information.</p>
+        <button onclick="goToStep('stepEvaluated')">Next</button>
+      </div>
+      <div class="step" id="step2e">
+        <p>What item is the customer looking for?</p>
+        <button onclick="goToStep('step3e')">Customer would like to get recommendation for Printer</button>
+        <button onclick="goToStep('step4e')">Customer would like to get recommendation for Media Supplies.</button>
+        <button onclick="goToStep('step6e')">Customer already know what to buy(Have a PartNumber) but do not know who to reach out to.</button>
+      </div>
+      <div class="step" id="step3e">
+        <p>- Please do try to provide a recommendation to the customer based on customer requirement</p>
+        <p>- If the issue is too complicated, please refer to pod lead or L2 near you.</p>
+        <button onclick="goToStep('step6e')">Unable to find what customer is looking for.</button>
+        <button onclick="goToStep('step7e')">Able to provide some recommendation to the customer.</button>
+      </div>
+      <div class="step" id="step6e">
+        <p>- Recommend customer to reach out to the MCC team</p>
+        <p>- Explain to the customer that we are from the Technical Support team and our information is limited compared to partner or MCC.</p>
+        <P>- Explain to the customer that Partner will have more options and information, so they are the best person to get the best recommendation.</P>
+        <p>Checklist:</p>
+        <p>1. Provide contact for the MCC team.</p>
+        <p>2. Provide Partner Locator Link.</p>
+        <p>3. Submit MCC Tracker.</p>
+        <p class=bold-font>NOTE: MCC is always the last resort.</p>
+        <button onclick="goToStep('step8e')">Checklist done</button>
+      </div>
+      <div class="step" id="step8e">
+        <p>- Leave the case open for one more day.</p>
+        <p>- Check with the customer the next day to make sure the customer received the information you provided.</p>
+        <button onclick="goToStep('stepMisrouted')">Next</button>
+      </div>
+      <!-- Case Closure for Misrouted (MCC)-->
+      <div class="step" id="stepMisrouted">
+        <p class=bold-font>[Important!! This case closure is only applicable to case that you did not do any troubleshooting.]</p>
+        <p class=bold-font>If troubleshooting was done, please close it as [Evaluated.]</p>
+        <p>Checklist:</p>
+        <p>1. Make sure that the customer knows who to refer to next.</p>
+        <p>2. Make sure all the fields in your case are updated.</p>
+        <p class=bold-font>Case Closure: MisRouted (Marketing Contact Center)</p>
+        <button onclick="goToStep('MainPage')">Back to Main Page</button>
+      </div>
+      <div class="step" id="step7e">
+        <p>Checklist:</p>
+        <p>1. Make sure that the customer is satisfied with the information provided.</p>
+        <p>2. Make sure the customer has someone to reach out to get the printer needed.</p>
+        <button onclick="goToStep('stepSP')">Customer already have a reseller to reach out to.</button>
+        <button onclick="goToStep('step6e')">Customer do not know where to purchase the printer.</button>
+      </div>
+      <div class="step" id="step4e">
+        <p>- Use the Supplier Selector Tool or the ZIPSHIP PDF files to find a Zebra label to recommend to the customer.</p>
+        <p>- If the issue is too complicated, please refer to pod lead or L2 near you.</p>
+        <button onclick="goToStep('step6e')">Unable to find what customer is looking for.</button>
+        <button onclick="goToStep('step7e')">Able to provide some recommendation to the customer.</button>
+      </div>
+      <script src="scripts.js"></script>
+  </body>
+</html>
