@@ -55,7 +55,7 @@ body {
     position: absolute;
     font-family: Arial;
     font-size: 15px;
-    top: 160px; /* Change as needed to position it vertically */
+    bottom: 160px; /* Change as needed to position it vertically */
     right: 70px; /* Position it 10px from the right */
     padding: 10px 15px;
     background-color: #134B70;
