@@ -19,7 +19,7 @@
             <p class="pfont">- This is a workflow guide that helps you with your case closure decision.</p>
             <p class="pfont">- This guide only shows how you should proceed with the next steps with the customer. If you have followed all the steps in the list, you will only have one way to close the ticket.</p>
             <p class="pfont">- Please make sure that you complete the steps before proceeding with the next step.</p>
-            <p class="pfont">- This guide does not apply to cases where pending for customer to come back from holiday/next visit.</p>
+            <p class="pfont">- This guide does not apply to cases where it is pending for the customer to come back from holiday/next visit.</p>
         </div>       
     </div>
     <div id="workflow">
@@ -27,7 +27,7 @@
       <div class="step active" id="MainPage">
         <p class=bold-font>Choose one of the following.</p>
         <p>What is the Entitlement status of your case?</p>
-        <button onclick="goToStep('step1')">Entitled cases</button>
+        <button onclick="goToStep('step1')">Entitled cases (Hardware Warranty, Contract, Software Support)</button>
         <button onclick="goToStep('stepNonEntitled1')">Non-Entitled cases</button>
       </div>
       <!-- Non-Entitled Case -->
@@ -39,7 +39,7 @@
         <button onclick="goToStep('step2c')">The printer is out of support scope.(China SKU)(Walmart Printer)(Unsupported Product)</button>
         <button onclick="goToStep('step2d')">Zebra Supported Issue.</button>
         <button onclick="goToStep('stepNonEntitled2d')">Software Related Issue</button>
-        <button onclick="goToStep('step2e')">Purchasing Inquiries</button>
+        <button onclick="goToStep('step2e')">Purchasing Inquiries ('I want to buy' request)</button>
       </div>
       <!-- Continue Work Here -->
       <div class="step" id="stepNonEntitled2b">
@@ -60,7 +60,7 @@
         <button onclick="goToStep('step3b')">No</button>
       </div>
       <div class="step" id="stepNonEntitled3b">
-        <p>Case is deemed to be not completed; please DO NOT close!</p>
+        <p>Case is deemed incomplete; please DO NOT close!</p>
         <button onclick="goToStep('stepreferl2')">Next</button>
       </div>
       <div class="step" id="step2e">
@@ -135,15 +135,15 @@
         <button onclick="goToStep('step3b')">No</button>
       </div>
       <div class="step" id="stepNonEntitled10b">
-        <p>Case is deemed to be not completed; please DO NOT close!</p>
+        <p>Case is deemed incomplete; please DO NOT close!</p>
         <button onclick="goToStep('stepreferl2')">Next</button>
       </div>
       <!-- Case Closure Info Provided -->
       <div class="step" id="stepInfoProvided">
         <p class=bold-font>Checklist:</p>
-        <p>1. Ensure you prove to the customer that the printer is working as per design.</p>
+        <p>1. Ensure you prove to the customer that the printer works according to design.</p>
         <p>2. Make sure the customer understands what is causing the issue.</p>
-        <p>3. Make sure the customer gives permission to close the ticket.</p>
+        <p>3. Make sure the customer permits to close the ticket.</p>
         <p>4. Make sure that the customer knows who to refer to next.</p>
         <p>5. Make sure all the fields in your case are updated.</p>
         <p class=bold-font>Case Closure: Info Provided</p>
@@ -184,7 +184,7 @@
         <button onclick="goToStep('step4b')">No</button>
       </div>
       <div class="step" id="step3b">
-        <p>Case is deemed to be not completed; please DO NOT close!</p>
+        <p>Case is deemed incomplete; please DO NOT close!</p>
         <button onclick="goToStep('stepreferl2')">Next</button>
       </div>
       <div class="step" id="step4b">
@@ -210,9 +210,9 @@
       <!-- Case Closure for Evaluated (No Fault Found) -->
       <div class="step" id="stepEvaluated">
         <p class=bold-font>Checklist:</p>
-        <p>1. Ensure you prove to the customer that the printer is working as per design.</p>
+        <p>1. Ensure you prove to the customer that the printer works according to design.</p>
         <p>2. Make sure the customer understands what is causing the issue.</p>
-        <p>3. Make sure the customer gives permission to close the ticket.</p>
+        <p>3. Make sure the customer permits to close the ticket.</p>
         <p>4. Make sure that the customer knows who to refer to next.</p>
         <p>5. Make sure all the fields in your case are updated.</p>
         <p class=bold-font>Case Closure: Evaluated (No fault Found)(Customization needed)</p>
@@ -226,13 +226,13 @@
       </div>
       <div class="step" id="step8b">
         <p>1. Make sure that the customer receives the information.</p>
-        <p>2. Check with the customer if there is any other assistance is needed.</p>
+        <p>2. Check with the customer to see if any other assistance is needed.</p>
         <button onclick="goToStep('stepSP')">Next</button>
       </div>
       <!-- Case Closure for Solution Provided -->
       <div class="step" id="stepSP">
         <p class=bold-font>Checklist: </P>
-        <p>1. Check with the customer if there is any other assistance is needed.</p>
+        <p>1. Check with the customer to see if any other assistance is needed.</p>
         <p>2. Promote survey to the customer. (You can use the email template for the solution provided)</p>
         <p class=bold-font>Case Closure: Solution Provided (Good Job.)</p>
         <button onclick="goToStep('MainPage')">Back to Main Page</button>
@@ -258,9 +258,9 @@
       <!-- Case Closure for Evaluated (Wrong Configuration)-->
       <div class="step" id="stepEvaluated2">
         <p>Checklist:</p>
-        <p>1. Ensure you prove to the customer that the printer is working as per design.</p>
+        <p>1. Ensure you prove to the customer that the printer works according to design.</p>
         <p>2. Make sure the customer understands what is causing the issue.</p>
-        <p>3. Make sure the customer gives permission to close the ticket.</p>
+        <p>3. Make sure the customer permits to close the ticket.</p>
         <p>4. Make sure that the customer knows who to refer to next.</p>
         <p>5. Make sure all the fields in your case are updated.</p>
         <p class=bold-font>Case Closure: Evaluated (wrong configuration)</p>
@@ -291,7 +291,7 @@
       </div>
       <div class="step" id="step6d">
         <p>- Make sure that there is nothing in our product line that can achieve what customer needs.</p>
-        <p>- Suggest customer that we can create a CAG request; have to refer to the reseller for a CAG request.</p>
+        <p>- Suggest to the customer that we can create a CAG request; have to refer to the reseller for a CAG request.</p>
         <p>- Do refer to Pod Lead or L2 for more information.</p>
         <button onclick="goToStep('stepEvaluated')">Next</button>
       </div>
@@ -325,7 +325,7 @@
       </div>
       <!-- Case Closure for Misrouted (MCC)-->
       <div class="step" id="stepMisrouted">
-        <p class=bold-font>[Important!! This case closure is only applicable to case that you did not do any troubleshooting.]</p>
+        <p class=bold-font>[Important!! This case closure is only applicable to cases in which you did not do any troubleshooting.]</p>
         <p class=bold-font>If troubleshooting was done, please close it as [Evaluated.]</p>
         <p>Checklist:</p>
         <p>1. Make sure that the customer knows who to refer to next.</p>
@@ -336,7 +336,7 @@
       <div class="step" id="step7e">
         <p>Checklist:</p>
         <p>1. Make sure that the customer is satisfied with the information provided.</p>
-        <p>2. Make sure the customer has someone to reach out to get the printer needed.</p>
+        <p>2. Ensure the customer has someone to reach out to get the printer needed.</p>
         <button onclick="goToStep('stepSP')">Customer already have a reseller to reach out to.</button>
         <button onclick="goToStep('step6e')">Customer do not know where to purchase the printer.</button>
       </div>
