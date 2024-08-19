@@ -153,11 +153,11 @@
       <div class="step" id="step1">
         <p class=bold-font>Choose one of the following.</p>
         <p>Which situation is the closest to your case?</p>
-        <button onclick="goToStep('step2a')">Hardware Failure</button>
-        <button onclick="goToStep('step2b')">3rd Party Media Issue</button>
-        <button onclick="goToStep('step2c')">The printer is out of support scope.(China SKU)(Walmart Printer)(Unsupported Product)</button>
-        <button onclick="goToStep('step2d')">Zebra Related Issue.(Calibration)(configuration)(Installation)</button>
+        <button onclick="goToStep('step2d')">Zebra Related Issue</button>
         <button onclick="goToStep('step2d')">Software Related Issue</button>
+        <button onclick="goToStep('step2b')">3rd Party Media Issue</button>
+        <button onclick="goToStep('step2a')">Hardware Failure</button> 
+        <button onclick="goToStep('step2c')">The printer is out of support scope.(China SKU)(Walmart Printer)(Unsupported Product)</button> 
         <button onclick="goToStep('step2e')">Purchasing Inquiries</button>
       </div>
       <!-- For both entitled and non-entitled -->
@@ -169,6 +169,27 @@
       </div>
       <!-- Case Closure RMA -->
       <div class="step" id="stepRMA">
+        <div id="popup" class="popup">
+          <span class="close" onclick="togglePopup()">&times;</span>
+          <p>-Good day!
+Thank you for contacting the Zebra Technical Support Team!
+ 
+Based on the troubleshooting steps we have done, we can confirm that the printer is faulty.
+I will suggest you send this printer for a service repair. You may submit a Zebra Repair Order Portal below.
+ 
+Repair Order Portal:
+repair.zebra.com 
+ 
+•	Click the ‘Register’ button to create a new account.
+•	If you have an account for the Repair Order Portal, click ‘Sign In’ on repair.zebra.com to submit your repair request
+ 
+Once you submit the Repair Order Form, our Zebra Customer Service Representative will contact you to advise further on the repair process.
+ 
+Thank you & Have A Great Day!
+</p>
+          <p>- This guide only shows how you should proceed with the next steps with the customer. If you have followed all the steps in the list, you will only have one way to close the ticket.</p>
+          <p>- Please make sure that you complete the steps before proceeding with the next step.</p>
+        </div>
         <p class=bold-font> Recommend the customer to send the printer for repair.</p>
         <p>Checklist:</p>
         <p>1. Make sure that you have sent the RMA form to the customer.</p>
